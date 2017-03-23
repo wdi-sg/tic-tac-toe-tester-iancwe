@@ -23,3 +23,13 @@
   background-color: grey;
   padding:10px;
 }
+
+.wrapper {
+    text-align: center;
+    width:97%;
+}
+
+#button {
+    position: absolute;
+    top: 50%;
+}
