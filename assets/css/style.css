@@ -33,3 +33,7 @@
     position: absolute;
     top: 50%;
 }
+
+#title{
+  text-align: center;
+}

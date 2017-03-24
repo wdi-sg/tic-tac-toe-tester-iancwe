@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  alert('jquery is up!')
+  // alert('jquery is up!')
 
   var grid = [null, null, null, null, null, null, null, null, null]
   var player = 1
@@ -18,7 +18,9 @@ $(document).ready(function () {
 
   function isGameOver () {
     if (whoWon()) {
-      alert('yah winner!')
+      setTimeout(function () {
+        alert('yah winner!')
+      }, 35)
       return true
     }
     return false
@@ -41,20 +43,21 @@ $(document).ready(function () {
   function restart () {
     grid = [null, null, null, null, null, null, null, null, null]
     player = 1
-    $('.box').text(' ')
+    $('.box').css('background-color', 'grey')
     buttclick = 0
   }
 
   $('.box').on('click', function (event) {
     var index = event.target.id
     if (player === 1) {
-      $(this).text('X')
-    } else { $(this).text('O') }
+      $(this).css('background-color', 'rgb(225, 0, 0)')
+    } else { $(this).css('background-color', 'blue') }
     playTurn(index)
     buttclick++
-    console.log(buttclick)
     if (buttclick === 9) {
-      alert('DRAW!')
+      setTimeout(function () {
+        alert('DRAW!')
+      }, 5)
     } else if (buttclick >= 5) {
       isGameOver()
     }
